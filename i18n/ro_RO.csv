@@ -1,0 +1,96 @@
+Emitere factura in SmartBill,Emite factura
+"Emitere factura din Magento Invoices?","Emitere factura din Magento Invoices?"
+SmartBill: Te rugam marcheaza invoice-ul ca platit,SmartBill: Te rugam marcheaza invoice-ul ca platit
+"Inainte de emiterea facturii in SmartBill Cloud, invoice-ul din Magento trebuie sa aiba statusul platit","Inainte de emiterea facturii in SmartBill Cloud, invoice-ul din Magento trebuie sa aiba statusul platit"
+Vizualizare ciorna,Vezi ciorna
+Vizualizare factura,Vezi factura
+"Retrimitere factura pe email","Email factura"
+Setari Generale,Setari Generale
+SmartBill Setari Generale - versiune modul 1.2.5,SmartBill Setari Generale - versiune modul 1.2.5
+"SmartBill Setari Generale","SmartBill General Settings"
+SmartBill Setari Facturi,SmartBill Setari Facturi
+Setari email,Setari email
+"Setare per comanda, din Magento","Setare per comanda, din Magento"
+"Versiunea curenta a platformei Magento 2 nu este suportata. Va rugam sa folositi versiunile 2.2.x (2.2.0, 2.2.1, 2.2.2 etc).","Versiunea curenta a platformei Magento 2 nu este suportata. Va rugam sa folositi versiunile 2.2.x (2.2.0, 2.2.1, 2.2.2 etc)."
+Romana,Romana
+Engleza,Engleza
+Franceza,Franceza
+Italiana,Italiana
+Spaniola,Spaniola
+Maghiara,Maghiara
+Germana,Germana
+Utilizator,Utilizator
+Introdu adresa de email utilizata pentru conectarea la SmartBill.,Introdu adresa de email utilizata pentru conectarea la SmartBill.
+Token,Token
+Introdu codul unic generat de SmartBill pentru a putea permite autentificarea : Din SmartBill Cloud - accesezi Contul meu / Integrari / Informatii API.,Introdu codul unic generat de SmartBill pentru a putea permite autentificarea : Din SmartBill Cloud - accesezi Contul meu / Integrari / Informatii API.
+Cod Fiscal,Cod Fiscal
+Introdu codul fiscal pentru societatea pentru care doresti sa facturezi si apoi sa salvezi configuratia.,Introdu codul fiscal pentru societatea pentru care doresti sa facturezi si apoi sa salvezi configuratia.
+Societatea este platitoare de TVA ?,Societatea este platitoare de TVA ?
+Preturile produselor contin TVA?,Preturile produselor contin TVA?
+Suma aferenta transportului contine TVA?,Suma aferenta transportului contine TVA?
+Adaugare TVA la incasare?,Adaugare TVA la incasare?
+Cota TVA,Cota TVA
+Alege tipul de TVA pe care-l folosesti.,Alege tipul de TVA pe care-l folosesti.
+Cota TVA pentru Transport,Cota TVA pentru Transport
+Alege tipul de TVA pe care-l folosesti.,Alege tipul de TVA pe care-l folosesti.
+Serie documente,Serie documente
+Te rugam sa introduci seria de facturi dorita.,Te rugam sa introduci seria de facturi dorita.
+Factura emisa este finala?,Factura emisa este finala?
+Factura poate sa fie in stadiul de ciorna sau sa fie finala. Aceasta setare este utila pentru testare.,Factura poate sa fie in stadiul de ciorna sau sa fie finala. Aceasta setare este utila pentru testare.
+Descarcare gestiune?,Descarcare gestiune?
+Detalii gestiune,Detalii gestiune
+"Emitere facturi?","Emitere facturi?"
+"Alegeti 'Da' pentru a emite facturi si alegeti 'Nu' pentru a emite proforme.","Alegeti 'Da' pentru a emite facturi si alegeti 'Nu' pentru a emite proforme."
+Alege gestiunea pe care doresti sa o folosesti la emiterea facturilor.,Alege gestiunea pe care doresti sa o folosesti la emiterea facturilor.
+"Cand sunt emise facturi, acestea pot sa descarce stocul la vanzare. Pentru aceasta, ai nevoie sa ai deja definita o gestiune in contul tau SmartBill Cloud.","Cand sunt emise facturi, acestea pot sa descarce stocul la vanzare. Pentru aceasta, ai nevoie sa ai deja definita o gestiune in contul tau SmartBill Cloud."
+Numar de zile pana la scadenta,Numar de zile pana la scadenta
+"Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze scadenta..","Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze scadenta."
+Numar de zile pana la data livrarii,Numar de zile pana la data livrarii
+"Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze data livrarii. Daca acest numar este mai mic decat cel folosit pentru calcularea datei scadentei, atunci va fi setat identic cu acela.","Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze data livrarii. Daca acest numar este mai mic decat cel folosit pentru calcularea datei scadentei, atunci va fi setat identic cu acela."
+Factura este deja incasata la emitere?,Factura este deja incasata la emitere?
+Factura poate sa fie emisa direct incasata sau fara sa fie incasata.,Factura poate sa fie emisa direct incasata sau fara sa fie incasata.
+Limba,Limba
+Moneda,Moneda
+Unitatea de masura,Unitatea de masura
+"Remitere document","Remitere factura"
+Salvare client in SmartBill?,Salvare client in SmartBill?
+Salvare produs in SmartBill?,Salvare produs in SmartBill?
+Adaugare transport in factura,Adaugare transport in factura
+Eticheta transport,Eticheta transport
+Introdu textul pe care doresti sa il ai afisat pe factura la rubrica transport.,Introdu textul pe care doresti sa il ai afisat pe factura la rubrica transport.
+Mod depanare,Mod depanare
+"Prin acest mod, modulul SmartBill Cloud va trimite mai multe date despre platforma Magento 2, pentru analiza si solutionarea posibilelor probleme de conectivitate.","Prin acest mod, modulul SmartBill Cloud va trimite mai multe date despre platforma Magento 2, pentru analiza si solutionarea posibilelor probleme de conectivitate."
+Notificare client?,Notificare client?
+Poti alege daca factura sa fie trimisa prin email clientului.,Poti alege daca factura sa fie trimisa prin email clientului.
+Titlu email,Titlu email
+"In mesajul trimis catre client, poti alege ce titlu va fi setat pentru email-ul trimis catre client.","In mesajul trimis catre client, poti alege ce titlu va fi setat pentru email-ul trimis catre client."
+Copie email (CC),Copie email (CC)
+"Poti adauga o adresa de email la care doresti sa se trimita o copie prin CC. Daca doresti mai multe, acestea trebuie separate prin virgula.","Poti adauga o adresa de email la care doresti sa se trimita o copie prin CC. Daca doresti mai multe, acestea trebuie separate prin virgula."
+"Copie ""anonima"" email","Copie ""anonima"" email"
+"Poti adauga o adresa de email la care doresti sa se trimita o copie prin BCC. Daca doresti mai multe, acestea trebuie separate prin virgula. Adresele de email trecute aici nu vor fi vizibile in antetul mesajului precum cele de la campul anterior (CC).","Poti adauga o adresa de email la care doresti sa se trimita o copie prin BCC. Daca doresti mai multe, acestea trebuie separate prin virgula. Adresele de email trecute aici nu vor fi vizibile in antetul mesajului precum cele de la campul anterior (CC)."
+Continut mesaj,Continut mesaj
+Factura SmartBill poate fi emisa din sectiunea Orders sau din sectiunea Invoices. Alege 'Nu' pentru a emite factura din Orders sau 'Da' pentru a emite factura din Invoices.,Factura SmartBill poate fi emisa din sectiunea Orders sau din sectiunea Invoices. Alege 'Nu' pentru a emite factura din Orders sau 'Da' pentru a emite factura din Invoices.
+"<![CDATA[<div class='note'><span>Aici poti sa iti personalizezi mesajul pe care doresti sa-l trimiti catre client. Poti sa iti personalizezi mesajul folosind informatia existenta pe facturi, disponibila in contul SmartBill Cloud -&gt; Configurare -&gt; Email, precum :</span><ul><li> #tip document# </li><li> #link document# </li><li> #serie numar document# </li><li> #total document# </li><li> #data emiterii# </li><li> #data scadentei# </li><li> #mentiune# </li><li> #nume client# </li><li> #persoana contact# </li></ul><span>Pentru a folosi aceste variabile, ai nevoie sa le copiezi/inserezi incepand de la caracterul diez de inceput (#) pana la caracterul diez de final (#).</span> </div>]]>","<![CDATA[<div class='note'><span>Aici poti sa iti personalizezi mesajul pe care doresti sa-l trimiti catre client. Poti sa iti personalizezi mesajul folosind informatia existenta pe facturi, disponibila in contul SmartBill Cloud -&gt; Configurare -&gt; Email, precum :</span><ul><li> #tip document# </li><li> #link document# </li><li> #serie numar document# </li><li> #total document# </li><li> #data emiterii# </li><li> #data scadentei# </li><li> #mentiune# </li><li> #nume client# </li><li> #persoana contact# </li></ul><span>Pentru a folosi aceste variabile, ai nevoie sa le copiezi/inserezi incepand de la caracterul diez de inceput (#) pana la caracterul diez de final (#).</span> </div>]]>"
+"Succes!","Succes!"
+"EROARE","EROARE"
+"Eroare la conexiunea la server:","Eroare la conexiunea la server:"
+"SmartBill Cloud : Generare facturi","SmartBill Cloud : Generare facturi"
+"Doresti sa generezi factura pentru aceasta comanda?","Doresti sa generezi factura pentru aceasta comanda?"
+"SmartBill Cloud : Remitere facturi","SmartBill Cloud : Remitere facturi"
+"Doresti sa remiti documentul in SmartBill Cloud?","Doresti sa remiti documentul in SmartBill Cloud?"
+"SmartBill Cloud : retrimitere factura","SmartBill Cloud : retrimitere factura"
+"Doresti sa retrimiti factura acestui client?","Doresti sa retrimiti factura acestui client?"
+"Recomandam stergerea sau anularea facturii legate de aceasta comanda inainte de a face remiterea.","Recomandam stergerea sau anularea facturii legate de aceasta comanda inainte de a face remiterea."
+"Date invalide furnizate in momentul citirii inregistrarilor din Magento","Date invalide furnizate in momentul citirii inregistrarilor din Magento"
+"Datele de facturare furnizate sunt invalide","Datele de facturare furnizate sunt invalide"
+"Documentul nu a fost gasit in baza de date.","Documentul nu a fost gasit in baza de date."
+"Eroare la calcularea discount-ului pentru aceasta valoare.","Eroare la calcularea discount-ului pentru aceasta valoare."
+"Eroare la calcularea TVA-ului pentru aceasta inregistrare.","Eroare la calcularea TVA-ului pentru aceasta inregistrare."
+"Eroare la calcularea TVA-ului pentru aceste perechi de valori.","Eroare la calcularea TVA-ului pentru aceste perechi de valori."
+"Eroare la conectarea la SmartBill Cloud pentru afisarea valorilor TVA.","Eroare la conectarea la SmartBill Cloud pentru afisarea valorilor TVA."
+"Eroare la includerea transportului in factura.","Eroare la includerea transportului in factura."
+"Eroare la setarea cotei TVA. Cota TVA furnizata de catre Magento (%1) nu este definita in SmartBill Cloud","Eroare la setarea cotei TVA. Cota TVA furnizata de catre Magento (%1) nu este definita in SmartBill Cloud"
+"Eroare la trimiterea email-ului catre client.","Eroare la trimiterea email-ului catre client."
+"invalid / empty response","invalid / empty response"
+"Setari invalide pentru unitatile de masura din SmartBill Cloud","Setari invalide pentru unitatile de masura din SmartBill Cloud"
+"Te rugam sa verifici daca ai setat compania ca neplatitoare de TVA si in Magento si in contul dvs. SmartBill Cloud. ","Te rugam sa verifici daca ai setat compania ca neplatitoare de TVA si in Magento si in contul dvs. SmartBill Cloud. "

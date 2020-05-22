@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
+    <type name="SmartBill\Integration\Block\Adminhtml\Order\Invoice\View">
+        <arguments>
+            <argument name="backendUrl" xsi:type="object">Magento\Backend\Model\UrlInterface\Proxy</argument>
+            <argument name="context" xsi:type="object">Magento\Backend\Block\Template\Context</argument>
+            <argument name="registry" xsi:type="object">Magento\Framework\Registry</argument>
+            <argument name="adminHelper" xsi:type="object">Magento\Sales\Helper\Admin</argument>
+        </arguments>
+    </type>
+
+</config>
+

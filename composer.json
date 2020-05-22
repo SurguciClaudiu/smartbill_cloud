@@ -1,0 +1,25 @@
+{
+    "name": "smartbill/module-integration",
+    "description": "This module provides an integration between Magento 2 and SmartBill.ro",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "office@brunomag.ro",
+            "name": "Office Brunomag Concept"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "SmartBill\\Integration\\": ""
+        }
+    }
+}

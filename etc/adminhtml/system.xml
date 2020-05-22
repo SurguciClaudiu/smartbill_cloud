@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="smartbill" translate="label" sortOrder="300">
+            <label><![CDATA[<span class="smartbill-logo-config"></span><span>SmartBill</span>]]></label>
+        </tab>
+        <section id="smartbill_integration" translate="label" type="text" sortOrder="120" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Setari Generale</label>
+            <tab>smartbill</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="smartbill_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>SmartBill Setari Generale - versiune modul 1.2.5</label>
+                <field id="user" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Utilizator</label>
+                    <comment>Introdu adresa de email utilizata pentru conectarea la SmartBill.</comment>
+                </field>
+                <field id="token" translate="label" type="password" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Token</label>
+                    <comment>Introdu codul unic generat de SmartBill pentru a putea permite autentificarea : Din SmartBill Cloud - accesezi Contul meu / Integrari / Informatii API.</comment>
+                </field>
+                <field id="vat_code" translate="label" type="text" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Cod Fiscal</label>
+                    <comment>Introdu codul fiscal pentru societatea pentru care doresti sa facturezi si apoi sa salvezi configuratia.</comment>
+                    <can_be_empty>0</can_be_empty>
+                </field>
+                <field id="smartbill_invoice_from_magento_invoice" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Emitere factura din Magento Invoices?</label>
+                    <comment>Factura SmartBill poate fi emisa din sectiunea Orders sau din sectiunea Invoices. Alege 'Nu' pentru a emite factura din Orders sau 'Da' pentru a emite factura din Invoices.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="vat_company" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Societatea este platitoare de TVA ?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="vat_products" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Preturile produselor contin TVA?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="vat_company">1</field>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                 <field id="vat_details" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Cota TVA</label>
+                    <comment>Alege tipul de TVA pe care-l folosesti.</comment>
+                    <source_model>SmartBill\Integration\Model\Config\VatDetails</source_model>
+                    <depends>
+                        <field id="vat_company">1</field>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                 <field id="invoice_transportation_vat" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Cota TVA pentru Transport</label>
+                    <comment>Alege tipul de TVA pe care-l folosesti.</comment>
+                    <source_model>SmartBill\Integration\Model\Config\VatDetails</source_model>
+                    <depends>
+                        <field id="vat_company">1</field>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_transportation_vat_included" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Suma aferenta transportului contine TVA?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="vat_company">1</field>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_use_payment_tax" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Adaugare TVA la incasare?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="vat_company">1</field>
+                        <field id="vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="smartbill_invoice_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+
+                <label>SmartBill Setari Facturi</label>
+                <field id="invoice_series" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Serie documente</label>
+                    <comment>Te rugam sa introduci seria de facturi dorita.</comment>
+                    <source_model>SmartBill\Integration\Model\Config\InvoiceSeries</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+
+                </field>
+
+                <field id="invoice_not_draft" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Factura emisa este finala?</label>
+                    <comment>Factura poate sa fie in stadiul de ciorna sau sa fie finala. Aceasta setare este utila pentru testare.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_type" translate="label" type="select" sortOrder="4" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Emitere facturi?</label>
+                    <comment>Alegeti 'Da' pentru a emite facturi si alegeti 'Nu' pentru a emite proforme.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+
+                <field id="invoice_use_stock" translate="label comment" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Descarcare gestiune?</label>
+                    <comment>Cand sunt emise facturi, acestea pot sa descarce stocul la vanzare. Pentru aceasta, ai nevoie sa ai deja definita o gestiune in contul tau SmartBill Cloud.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_which_stock" translate="label" type="select" sortOrder="4" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Detalii gestiune</label>
+                    <comment>Alege gestiunea pe care doresti sa o folosesti la emiterea facturilor.</comment>
+                    <source_model>SmartBill\Integration\Model\Config\StocksDetails</source_model>
+                    <depends>
+                        <field id="invoice_use_stock">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+
+                <field id="invoice_due_days" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Numar de zile pana la scadenta</label>
+                    <comment>Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze scadenta.</comment>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_delivery_days" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Numar de zile pana la data livrarii</label>
+                    <comment>Poti alege numarul de zile, fata de data emiterii, cand doresti sa se calculeze data livrarii. Daca acest numar este mai mic decat cel folosit pentru calcularea datei scadentei, atunci va fi setat identic cu acela.</comment>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_language" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Limba</label>
+                    <source_model>SmartBill\Integration\Model\Config\InvoiceLanguage</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_currency" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Moneda</label>
+                    <source_model>SmartBill\Integration\Model\Config\InvoiceCurrency</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_unit" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Unitatea de masura</label>
+                    <source_model>SmartBill\Integration\Model\Config\InvoiceUnitSettings</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+
+                <field id="invoice_save_client" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Salvare client in SmartBill?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+
+                </field>
+                <field id="invoice_save_product" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Salvare produs in SmartBill?</label>
+                     <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                   <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="invoice_transportation" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Adaugare transport in factura</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+
+                </field>
+                <field id="invoice_transportation_label" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Eticheta transport</label>
+                    <comment>Introdu textul pe care doresti sa il ai afisat pe factura la rubrica transport.</comment>
+                    <depends>
+                        <field id="invoice_transportation">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="debug_mode" translate="label" type="select" sortOrder="20" showInDefault="1"
+                    showInWebsite="1" showInStore="1">
+                    <label>Mod depanare</label>
+                    <comment>Prin acest mod, modulul SmartBill Cloud va trimite mai multe date despre platforma Magento 2, pentru analiza si solutionarea posibilelor probleme de conectivitate.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+
+
+
+
+            </group>
+            <group id="smartbill_invoice_email_settings" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Setari email</label>
+                <field id="invoice_notification" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notificare client?</label>
+                    <comment>Poti alege daca factura sa fie trimisa prin email clientului.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+
+                </field>
+                <field id="invoice_notification_subject" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Titlu email</label>
+                    <comment>In mesajul trimis catre client, poti alege ce titlu va fi setat pentru email-ul trimis catre client.</comment>
+                    <depends>
+                        <field id="invoice_notification">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_notification_cc" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Copie email (CC)</label>
+                    <comment>Poti adauga o adresa de email la care doresti sa se trimita o copie prin CC. Daca doresti mai multe, acestea trebuie separate prin virgula.</comment>
+                    <depends>
+                        <field id="invoice_notification">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_notification_bcc" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Copie "anonima" email</label>
+                    <comment>Poti adauga o adresa de email la care doresti sa se trimita o copie prin BCC. Daca doresti mai multe, acestea trebuie separate prin virgula. Adresele de email trecute aici nu vor fi vizibile in antetul mesajului precum cele de la campul anterior (CC).</comment>
+                    <depends>
+                        <field id="invoice_notification">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+                <field id="invoice_notification_bodytext" translate="label comment" type="textarea" sortOrder="21" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Continut mesaj</label>
+                    <comment><![CDATA[<div class='note'><span>Aici poti sa iti personalizezi mesajul pe care doresti sa-l trimiti catre client. Poti sa iti personalizezi mesajul folosind informatia existenta pe facturi, disponibila in contul SmartBill Cloud -&gt; Configurare -&gt; Email, precum :</span><ul><li> #tip document# </li><li> #link document# </li><li> #serie numar document# </li><li> #total document# </li><li> #data emiterii# </li><li> #data scadentei# </li><li> #mentiune# </li><li> #nume client# </li><li> #persoana contact# </li></ul><span>Pentru a folosi aceste variabile, ai nevoie sa le copiezi/inserezi incepand de la caracterul diez de inceput (#) pana la caracterul diez de final (#).</span> </div>]]></comment>
+                    <depends>
+                        <field id="invoice_notification">1</field>
+                        <field id="smartbill_integration/smartbill_settings/vat_code" negative="1">0</field>
+                    </depends>
+                </field>
+
+
+
+
+
+
+            </group>
+
+        </section>
+
+    </system>
+</config>

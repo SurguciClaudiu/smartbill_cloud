@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation=
+"urn:magento:framework:ObjectManager/etc/config.xsd">
+<type name="Magento\Sales\Block\Adminhtml\Order\Invoice\View">
+    <plugin name="smartbill_integration_override_invoice_buttons" type="SmartBill\Integration\Block\Adminhtml\Order\Invoice\View" />
+</type>
+<preference for="SmartBill\Integration\Api\Data\InvoiceInterface" type="SmartBill\Integration\Model\Invoice" />
+<preference for="Magento\Sales\Block\Adminhtml\Order\View" type="SmartBill\Integration\Block\Adminhtml\Order\View" />
+</config>
